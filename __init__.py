@@ -7,6 +7,29 @@ import sqlite3
                                                                                                                                        
 app = Flask(__name__)    
 
+@app.route('/commits/')
+def get_commits():
+    # Récupérer les données des commits depuis l'API GitHub
+    url = 'https://api.github.com/repos/OpenRSI/5MCSI_Metriques/commits'
+    response = requests.get(url)
+    commits_data = response.json()
+
+    # Compter les commits par minute
+    commits_per_minute = {}
+    for commit in commits_data:
+        commit_date_string = commit['commit']['author']['date']
+        commit_date_object = datetime.strptime(commit_date_string, '%Y-%m-%dT%H:%M:%SZ')
+        minute = commit_date_object.minute
+        if minute in commits_per_minute:
+            commits_per_minute[minute] += 1
+        else:
+            commits_per_minute[minute] = 1
+
+    # Créer une liste de tuples (minute, nombre de commits) pour le graphique
+    data_for_graph = [{'minute': minute, 'commits': count} for minute, count in commits_per_minute.items()]
+
+    return jsonify(data_for_graph)
+
 @app.route("/contact/")
 def MaPremiereAPI():
     return render_template("contact.html")
