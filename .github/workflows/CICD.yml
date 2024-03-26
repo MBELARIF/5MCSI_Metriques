@@ -2,7 +2,7 @@ name: Industrialisation continue sur le serveur Alwaysdata
 on: push
 jobs:
   Connexion:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-lates
     steps:
       - name: Connexion SSH avec le serveur
         uses: appleboy/ssh-action@master
