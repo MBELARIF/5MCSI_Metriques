@@ -7,13 +7,21 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            overflow: hidden;
+            animation: gradientAnimation 10s ease infinite;
+            background-size: 400% 400%;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         h2 {
-            color: #333;
+            color: #fff;
             text-align: center;
             margin-top: 50px;
         }
@@ -21,7 +29,7 @@
         form {
             max-width: 500px;
             margin: 0 auto;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -35,6 +43,7 @@
 
         input[type="text"],
         input[type="tel"],
+        input[type="email"],
         textarea {
             width: 100%;
             padding: 10px;
