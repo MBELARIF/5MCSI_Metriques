@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+</head>
+<body>
+    <h2>Contactez-nous</h2>
+    <form action="/submit-contact/" method="post">
+        <label for="fname">Nom:</label>
+        <input type="text" id="fname" name="firstname" required><br><br>
+
+        <label for="lname">Prénom:</label>
+        <input type="text" id="lname" name="lastname" required><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" required></textarea><br><br>
+
+        <input type="submit" value="Envoyer">
+    </form>
+</body>
+</html>
