@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Graphique</title>
+ </head>  
+<body>
+    <h2>Mon Graphique</h2>
+</body>
+</html>
+Etape 1.2 : Création d'une nouvelle route Créez à présent une nouvelle route afin de pouvoir consulter votre fichier HTML depuis votre site en ligne. Pour cela, ajouter le code ci-dessous dans votre fichier __init__.py :
+
+
+@app.route("/rapport/")
+def mongraphique():
+    return render_template("graphique.html")
