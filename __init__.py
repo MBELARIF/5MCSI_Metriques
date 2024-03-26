@@ -28,7 +28,7 @@ def mongraphique():
     return render_template("graphique.html")
 
 @app.route("/histogram/")
-def mongraphique():
+def monhistogram():
     return render_template("histogram.html")
 
 @app.route('/')
